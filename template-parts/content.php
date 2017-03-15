@@ -10,6 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	if ( is_sticky() && is_home() ) :
+		avani_svg( array( 'icon' => 'thumb-tack' ) );
+	endif;
+	?>
 	<?php avani_post_thumbnail(); ?>
 	<header class="entry-header">
 		<?php
@@ -29,8 +34,9 @@
 
 	<div class="entry-content">
 		<?php
-		if ( ( is_home() || is_archive() ) && 'content' != get_theme_mod( 'avani_excerpt_option', 'excerpt' ) // WPCS: loose comparison ok.
-			&& ! has_post_format( array( 'aside', 'quote', 'status', 'video', 'audio', 'gallery' ) ) ) :
+		if ( ( is_home() || is_archive() ) && 'content' !== get_theme_mod( 'avani_excerpt_option', 'excerpt' )
+			&& ! has_post_format( array( 'aside', 'quote', 'status', 'video', 'audio', 'gallery' ) )
+			&& ! post_password_required() ) :
 			the_excerpt();
 		else :
 			the_content( sprintf(
@@ -43,7 +49,7 @@
 			 * Quicktag has been used for one or more times in a single post).
 			 */
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'avani' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'avani' ),
 				'after'  => '</div>',
 			) );
 		endif;

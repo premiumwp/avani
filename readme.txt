@@ -4,8 +4,8 @@ Created by: PremiumWP
 Requires at least: WordPress 4.1+ ( Theme Logo available only for WordPress 4.5+ )
 PHP required : PHP 5.3+
 IE Browser Support: IE9+
-Tested up to: WordPress 4.6
-Version: 1.0.0
+Tested up to: WordPress 4.7.2
+Version: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, translation-ready, custom-header,
@@ -51,6 +51,12 @@ Avani WordPress Theme is based on Underscores, (C) 2012-2015 Automattic, Inc.
 Licenses: [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 Source: http://underscores.me/
 
+Avani WordPress Theme incorporates code from Twenty Fifteen WordPress Theme, Copyright 2014-2017 WordPress.org & Automattic.com
+Twenty Fifteen is distributed under the terms of the GNU GPL.
+
+Avani WordPress Theme incorporates code from Twenty Seventeen WordPress Theme, Copyright 2016-2017 WordPress.org & Automattic.com
+Twenty Fifteen is distributed under the terms of the GNU GPL.
+
 == Credits ==
 Avani WordPress Theme bundles the following third-party resources:
 
@@ -58,15 +64,25 @@ normalize.css, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal
 Licenses: [MIT](http://opensource.org/licenses/MIT)
 Source:  http://github.com/necolas/normalize.css
 
-Genericons icon font, Copyright 2013-2015 Automattic.com
-License: GNU GPL, Version 2 (or later)
-Source: http://www.genericons.com
+Font Awesome icons, Copyright Dave Gandy
+License: SIL Open Font License, version 1.1.
+Source: http://fontawesome.io/
 
-photo-1476036938705-50a5698bb0af by Averie Woodard(https://unsplash.com/@averieclaire)
+Screeshot logo image by Ratiu Bia(https://unsplash.com/@ratiubia)
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-Source: https://unsplash.com/photos/MaxffqWOZjE
+Source: https://unsplash.com/photos/7fzINre0NQE
+
+Screeshot post thumbnail image by Brooke Lark(https://unsplash.com/@brookelark)
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://unsplash.com/photos/kXQ3J7_2fpc
 
 == Changelog ==
 
-= 1.0.0 - Feb 16 2017 =
+= 1.0 - Feb 16 2017 =
 Initial Release
+
+= 1.1 - Mar 02 2017 =
+1. Add: Social menu featured.
+2. Replace genericons with SVG icons.
+3. Major changes in style.css
+4. Minor changes in PHP codes

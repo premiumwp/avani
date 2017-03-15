@@ -25,20 +25,20 @@ if ( ! function_exists( 'avani_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			esc_html_x( 'on %s', 'post date', 'avani' ),
+			_x( 'on %s', 'post date', 'avani' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		$byline = sprintf(
-			esc_html_x( 'Written by %s', 'post author', 'avani' ),
+			_x( 'Written by %s', 'post author', 'avani' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>';
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
-				esc_html__( 'Edit Post%s', 'avani' ),
+				__( 'Edit Post%s', 'avani' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
 			'<span class="edit-link">',
@@ -55,15 +55,15 @@ if ( ! function_exists( 'avani_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( is_singular( 'post' ) ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'avani' ) );
+			$categories_list = get_the_category_list( __( ', ', 'avani' ) );
 			if ( $categories_list && avani_categorized_blog() ) {
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'avani' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'avani' ) . '</span>', $categories_list );
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'avani' ) );
+			$tags_list = get_the_tag_list( '', __( ', ', 'avani' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'avani' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'avani' ) . '</span>', $tags_list );
 			}
 		}
 	}
@@ -187,8 +187,8 @@ if ( ! function_exists( 'avani_footer_widgets' ) ) :
 		 * area does not contain any widgets).
 		 */
 		if ( 0 !== $total ) {
-			printf( '<div class="footer-widgets">' );
-			$i = 0; while ( $i < $total ) {
+			printf( '<div class="footer-widgets"><div class="wrapper">' );
+			$i = 0; while ( $i < 3 ) {
 				$i++;
 				if ( is_active_sidebar( 'footer-' . $i ) ) :
 					printf( '<div class="footer-widget footer-widget-count-%s">', absint( $total ) );
@@ -196,7 +196,7 @@ if ( ! function_exists( 'avani_footer_widgets' ) ) :
 					printf( '</div>' );
 				endif;
 			}
-			printf( '</div><!--/# footer-widgets-->' );
+			printf( '</div></div><!--/# footer-widgets-->' );
 		}
 	}
 endif;

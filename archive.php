@@ -36,9 +36,9 @@ get_header(); ?>
 			endwhile;
 
 			the_posts_pagination( array(
-				'prev_text'          => esc_html__( 'Previous', 'avani' ),
-				'next_text'          => esc_html__( 'Next', 'avani' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'avani' ) . ' </span>',
+				'prev_text'          => __( 'Previous', 'avani' ),
+				'next_text'          => __( 'Next', 'avani' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'avani' ) . ' </span>',
 			) );
 
 		else :

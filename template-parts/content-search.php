@@ -24,7 +24,9 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
-		<?php avani_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php if ( is_singular( 'post' ) ) :?>
+		<footer class="entry-footer">
+			<?php avani_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	<?php endif; ?>
 </article><!-- #post-## -->

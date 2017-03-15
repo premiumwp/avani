@@ -14,11 +14,11 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'avani' ); ?></h1>
+					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'avani' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'You might ensure the URL is spelled correctly, or if you followed a link here please let us know. Please try a search to reach your desired destination.', 'avani' ); ?></p>
+					<p><?php _e( 'You might ensure the URL is spelled correctly, or if you followed a link here please let us know. Please try a search to reach your desired destination.', 'avani' ); ?></p>
 
 					<?php
 					get_search_form();

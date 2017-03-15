@@ -18,11 +18,11 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', get_post_format() );
 
 			the_post_navigation( array(
-				'next_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'avani' ) . '</span>
-					<span class="screen-reader-text">' . esc_html__( 'Next post:', 'avani' ) . '</span>
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'avani' ) . '</span>
+					<span class="screen-reader-text">' . __( 'Next post:', 'avani' ) . '</span>
 					<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous', 'avani' ) . '</span>
-					<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'avani' ) . '</span>
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'avani' ) . '</span>
+					<span class="screen-reader-text">' . __( 'Previous post:', 'avani' ) . '</span>
 					<span class="post-title">%title</span>',
 			) );
 

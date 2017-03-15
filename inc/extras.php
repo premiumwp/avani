@@ -58,7 +58,7 @@ add_action( 'wp_head', 'avani_pingback_header' );
  */
 function avani_excerpt_teaser() {
 	$url  = esc_url( get_permalink() );
-	$text = esc_html__( 'Continue reading', 'avani' );
+	$text = __( 'Continue reading', 'avani' );
 	$title = get_the_title();
 
 	if ( 0 === strlen( $title ) ) :
@@ -78,7 +78,7 @@ add_filter( 'excerpt_more', 'avani_excerpt_teaser' );
 function avani_link_color() {
 	$output = '';
 	$color = get_theme_mod( 'avani_theme_color', '' );
-	
+
 	// Escape $color. Output only if $color is a 3 or 6 digit hex color (with #).
 	if ( '' !== $color && preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
 		$output .= sprintf( '
@@ -131,9 +131,8 @@ function avani_link_color() {
 add_action( 'wp_enqueue_scripts', 'avani_link_color', 50 );
 
 /**
- * function to show the footer info, copyright information
+ * Function to show the footer info, copyright information.
  */
 function avani_footer_info() {
-	printf( esc_html__( 'Theme by %1$s. Powered by %2$s', 'avani' ), '<a href="https://www.premiumwp.com/" target="_blank" title="PremiumWP">PremiumWP</a>', '<a href="http://wordpress.org/" target="_blank" title="WordPress.org">WordPress</a>' );
+	printf( __( 'Theme by %1$s. Powered by %2$s', 'avani' ), '<a href="https://www.premiumwp.com/" target="_blank" title="PremiumWP">PremiumWP</a>', '<a href="http://wordpress.org/" target="_blank" title="WordPress.org">WordPress</a>' );
 }
-

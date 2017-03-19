@@ -1159,7 +1159,7 @@ td {
 
 .nav-menu .menu-item a {
 	font-size: 15px;
-	line-height: 1.73333;
+	line-height: 1.733334;
 	display: block;
 	padding: 15px 0;
 	text-transform: uppercase;
@@ -1348,7 +1348,7 @@ td {
 	}
 
 	.nav-menu .menu-item a {
-		padding: 1.65em 1.25em;
+		padding: 26px 20px;
 		-webkit-transition: all 0.2s ease-in-out 0.1s;
 		        transition: all 0.2s ease-in-out 0.1s;
 		border: none;
@@ -1726,6 +1726,10 @@ td {
 		margin-left: auto;
 	}
 
+	.wrap {
+		max-width: 800px;
+	}
+
 	.page-header {
 		border-width: 1px;
 	}
@@ -1736,9 +1740,6 @@ td {
 }
 
 @media only screen and (min-width: 860px) {
-	.wrap {
-		padding: 0;
-	}
 
 	.page .content-area {
 		padding-bottom: 0;
@@ -1786,6 +1787,10 @@ td {
 	.author-info,
 	.page-header {
 		padding: 2.25em;
+	}
+
+	.wrap {
+		max-width: none;
 	}
 }
 

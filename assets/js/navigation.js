@@ -6,7 +6,7 @@
  */
 (function( $ ) {
 	var siteNavigation;
-	
+
 	/*
 	 * Test if inline SVGs are supported.
 	 * @link https://github.com/Modernizr/Modernizr/
@@ -16,7 +16,7 @@
 		div.innerHTML = '<svg/>';
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
 	}
-	
+
 	// Change HTML class based on SVG support.
 	$( document ).ready( function() {
 		if ( true === supportsInlineSVG() ) {
@@ -26,58 +26,58 @@
 
 	// Sticky Main navigation.
 	$(document).ready(function() {
-	
+
 		// define variables
 		var navOffset, scrollPos = 0;
-		
+
 		// add utility wrapper elements for positioning
 		$("#main-navigation").wrap('<div class="nav-placeholder"></div>');
-		
+
 		// function to run on page load and window resize
 		function stickyUtility() {
-			
+
 			// only update navOffset if it is not currently using fixed position
 			if (!$("#main-navigation").hasClass("site-navigation-fixed")) {
 				navOffset = $("#main-navigation").offset().top;
-			
+
 				// Account for Admin bar.
 				if ( $( '#wpadminbar' ).length ) {
 					navOffset = navOffset - $( '#wpadminbar' ).height();
 				}
 			}
 
-			var $menuToggle = $("#main-navigation").find( '.menu-toggle' );
-			if ( 'none' === $menuToggle.css( 'display' ) ) {
+			var menuToggle = $("#main-navigation").find( '.menu-toggle' );
+			if ( 'none' === menuToggle.css( 'display' ) ) {
 				// apply matching height to nav wrapper div to avoid awkward content jumps
 				$(".nav-placeholder").height($("#main-navigation").outerHeight()).css('min-height','79px');
 			} else {
 				// apply auto height for smaller screens
 				$(".nav-placeholder").css({"height": "auto", "min-height": "initial"});
 			}
-			
+
 		} // end stickyUtility function
 
 		// run on page load
 		stickyUtility();
-		
+
 		// run on window resize
 		$(window).resize(function() {
 			stickyUtility();
 		});
-		
+
 		// run on scroll event
 		$(window).scroll(function() {
-			
+
 			scrollPos = $(window).scrollTop();
-			
+
 			if (scrollPos >= navOffset) {
 				$("#main-navigation").addClass("site-navigation-fixed");
 			} else {
 				$("#main-navigation").removeClass("site-navigation-fixed");
 			}
-			
+
 		});
-		
+
 	});
 
 	function initMainNavigation( container ) {
@@ -111,7 +111,7 @@
 			screenReaderSpan.text( screenReaderSpan.text() === avaniScreenReaderText.expand ? avaniScreenReaderText.collapse : avaniScreenReaderText.expand );
 		});
 	}
-	
+
 	function initNavToggle( container ) {
 		var menuToggle = container.find('.menu-toggle');
 		// Return early if menuToggle is missing.

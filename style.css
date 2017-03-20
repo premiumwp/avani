@@ -486,10 +486,6 @@ blockquote b {
 		font-size: 112.5%;
 	}
 
-	h1 {
-		font-size: 2.5rem;
-	}
-
 	code,
 	kbd,
 	samp,
@@ -1334,6 +1330,10 @@ td {
 
 	.admin-bar .site-navigation-fixed {
 		top: 32px;
+	}
+
+	.nav-placeholder {
+		min-height: 79px;
 	}
 
 	.menu-toggle,
@@ -2215,8 +2215,7 @@ td {
 
 /* Show screen reader text in some cases */
 
-.no-svg .social-icons-menu a .screen-reader-text,
-.no-svg .search-submit .screen-reader-text {
+.no-svg .social-icons-menu a .screen-reader-text {
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: 400;

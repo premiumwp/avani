@@ -3,9 +3,9 @@
 Created by: PremiumWP
 Requires at least: WordPress 4.1+ ( Theme Logo available only for WordPress 4.5+ )
 PHP required : PHP 5.3+
-IE Browser Support: IE9+
+IE Browser Support: IE10+
 Tested up to: WordPress 4.7.2
-Version: 1.1
+Version: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, translation-ready, custom-header,
@@ -86,3 +86,10 @@ Initial Release
 2. Replace genericons with SVG icons.
 3. Major changes in style.css
 4. Minor changes in PHP codes
+
+= 1.1.1 - Mar 20 2017 =
+1. Main Navigation width increased for larger screens.
+2. Navigation menu styles related issues resolved.
+3. Customizer option to display Custom header image only on front page removed.
+   Now, header image will be displayed on front page only by default.
+4. Minor typographical improvements.

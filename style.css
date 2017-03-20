@@ -4,7 +4,7 @@ Theme URI: https://www.premiumwp.com/avani/
 Author: PremiumWP
 Author URI: https://www.premiumwp.com/
 Description: Avani is a simple and minimal WordPress theme designed to enhance your personal blogging experience.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avani
@@ -267,8 +267,7 @@ table {
 }
 
 [type='search'] {
-	-webkit-border-radius: 0;
-	        border-radius: 0;
+	border-radius: 0;
 	outline-offset: -2px;
 	-webkit-appearance: none;
 }
@@ -338,6 +337,7 @@ input[type='submit'],
 textarea:focus,
 .button,
 .gallery img {
+	-webkit-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
 }
 
@@ -437,6 +437,7 @@ pre {
 	color: maroon;
 	border: 1px solid #e6e6e6;
 	border-left-width: 10px;
+	background: #f2f2f2 -webkit-linear-gradient(#f2f2f2 50%, #fff 50%) repeat 0 0;
 	background: #f2f2f2 linear-gradient(#f2f2f2 50%, #fff 50%) repeat 0 0;
 	background-image: -webkit-linear-gradient(#f2f2f2 50%, #fff 50%);
 	background-size: 52px 52px;
@@ -518,27 +519,27 @@ h6 {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 3rem;
 }
 
 h2 {
-	font-size: 1.625rem;
+	font-size: 2rem;
 }
 
 h3 {
-	font-size: 1.375rem;
+	font-size: 1.625rem;
 }
 
 h4 {
-	font-size: 1.25rem;
+	font-size: 1.375rem;
 }
 
 h5 {
-	font-size: 1.125rem;
+	font-size: 1.25rem;
 }
 
 h6 {
-	font-size: 1rem;
+	font-size: 1.125rem;
 }
 
 /**
@@ -1117,16 +1118,16 @@ td {
 	width: 24px;
 	height: 24px;
 	-webkit-transition: transform 0.25s ease-in-out;
-	    -ms-transition: transform 0.25s ease-in-out;
+	        -webkit-transition: -webkit-transform 0.25s ease-in-out;
+	        transition: -webkit-transform 0.25s ease-in-out;
 	        transition: transform 0.25s ease-in-out;
+	        transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
 	-webkit-transform: rotate( 0 );
-	    -ms-transform: rotate( 0 );
 	        transform: rotate( 0 );
 }
 
 .sub-menu-toggle.toggled-on .icon {
 	-webkit-transform: rotate( 180deg );
-	    -ms-transform: rotate( 180deg );
 	        transform: rotate( 180deg );
 }
 
@@ -1161,6 +1162,7 @@ td {
 	text-transform: uppercase;
 	color: #333;
 	border: none;
+	letter-spacing: 0.025em;
 }
 
 .nav-menu a:hover,
@@ -1349,9 +1351,9 @@ td {
 
 	.nav-menu .menu-item a {
 		padding: 26px 20px;
-		-webkit-transition: all 0.2s ease-in-out 0.1s;
-		        transition: all 0.2s ease-in-out 0.1s;
-		border: none;
+		-webkit-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+		border: none
 	}
 
 	.nav-menu .menu-item-has-children > a,
@@ -1361,8 +1363,6 @@ td {
 
 	.nav-menu .menu-item:hover a,
 	.nav-menu .menu-item.focus a {
-		-webkit-transition-delay: 0.15s;
-		        transition-delay: 0.15s;
 		background-color: WhiteSmoke;
 	}
 
@@ -1382,35 +1382,39 @@ td {
 	}
 
 	.nav-menu .sub-menu {
+		display: block;
 		position: absolute;
 		z-index: -1;
 		top: 100%;
-		display: block;
 		visibility: hidden;
 		margin-left: 0;
-		-webkit-transition: all 0.2s ease 0.3s;
-		        transition: all 0.2s ease 0.3s;
+		-webkit-transition: all 0.2s ease-in-out 0.15s;
+		transition: all 0.2s ease-in-out 0.15s;
 		text-align: left;
 		opacity: 0;
 	}
 
 	.nav-menu .sub-menu a {
-		width: 225px;
+		width: 200px;
 		padding: 15px 20px;
 		word-wrap: break-word;
+		text-transform: capitalize;
+		letter-spacing: 0.05em;
+		border-bottom: 1px solid #e6e6e6;
+		background-color: WhiteSmoke;
 	}
 
 	.nav-menu .sub-menu .sub-menu {
 		top: -1px;
-		left: 224px;
+		left: 199px;
 	}
 
 	.nav-menu .menu-item:hover > .sub-menu,
 	.nav-menu .menu-item.focus > .sub-menu {
 		z-index: 99999;
 		visibility: visible;
-		-webkit-transition-delay: 0.3s;
-		        transition-delay: 0.3s;
+		-webkit-transition-delay: 0.1s;
+		        transition-delay: 0.1s;
 		opacity: 1;
 	}
 
@@ -1483,13 +1487,20 @@ td {
 }
 
 .site-title {
-	font: 700 39px/1.2 'Oswald', Helvetica Neue, Helvetica, Arial, sans-serif;
+	font: 700 39px/1.2 'Oswald', serif;
 	margin: 0;
 	text-transform: uppercase;
 }
 
 .site-title a {
 	color: #333;
+}
+
+.site-title a:hover,
+.site-title a:focus {
+	border-bottom-width: 0;
+	padding-bottom: 0;
+	color: #888;
 }
 
 .site-description {
@@ -1589,16 +1600,6 @@ td {
 }
 
 .entry-title {
-	font-size: 48px;
-}
-
-.home .entry-title,
-.search .entry-title,
-.archive .entry-title {
-	font-size: 36px;
-}
-
-.entry-title {
 	margin-bottom: 5px;
 }
 
@@ -1671,9 +1672,6 @@ td {
 	display: inline-block;
 	padding: 0.625em;
 	-webkit-transition: all 0.25s ease-in;
-	   -moz-transition: all 0.25s ease-in;
-	    -ms-transition: all 0.25s ease-in;
-	     -o-transition: all 0.25s ease-in;
 	        transition: all 0.25s ease-in;
 	text-transform: uppercase;
 	color: #333;

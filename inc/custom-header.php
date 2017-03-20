@@ -17,9 +17,9 @@
 function avani_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'avani_custom_header_args', array(
 		'default-image'          => '',
-		'width'                  => 1366,
-		'height'                 => 320,
-		'flex-width'             => true,
+		'width'                  => 1100,
+		'height'                 => 420,
+		'flex-width'             => false,
 		'flex-height'            => true,
 		'header-text'            => true,
 		'default-text-color'     => '',

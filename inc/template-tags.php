@@ -119,13 +119,8 @@ if ( ! function_exists( 'avani_the_custom_header' ) ) :
 	 * Does nothing if the custom header is not available.
 	 */
 	function avani_the_custom_header() {
-		if ( get_header_image() ) {
-			if ( 1 === get_theme_mod( 'avani_header_on_home_only', '' ) && ! ( is_home() || is_front_page() ) ) {
-				return;
-			}
-			?>
-			<img class="custom-header" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="" >
-			<?php
+		if ( get_header_image() && is_front_page() ) {
+			printf( '<div id="wp-custom-header" class="wp-custom-header">%s</div>', get_header_image_tag() );
 		}
 	}
 endif;

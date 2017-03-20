@@ -81,21 +81,6 @@ function avani_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'avani_header_on_home_only', array(
-			'default'           => '',
-			'sanitize_callback' => 'avani_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'avani_header_on_home_only', array(
-			'label'     => __( 'Display header image on home page only', 'avani' ),
-			'section'   => 'avani_theme_section',
-			'settings'  => 'avani_header_on_home_only',
-			'type'      => 'checkbox',
-		)
-	);
-
-	$wp_customize->add_setting(
 		'avani_no_thumbnail_onpost', array(
 			'default'           => '',
 			'sanitize_callback' => 'avani_sanitize_checkbox',

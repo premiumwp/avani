@@ -61,8 +61,8 @@
 				);?>
 			</nav><!-- #site-navigation -->
 		<?php endif; ?>
-
-		<?php avani_the_custom_header();?>
 	</header><!-- #masthead -->
+
+	<?php avani_the_custom_header();?>
 
 	<div id="content" class="site-content">

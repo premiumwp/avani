@@ -34,6 +34,11 @@ function avani_body_classes( $classes ) {
 		$classes[] = 'content-sidebar';
 	endif;
 
+	// Adds a class for fixed main navigation.
+	if ( get_theme_mod( 'avani_sticky_main_menu', true ) ) {
+		$classes[] = 'fixed-nav';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'avani_body_classes' );

@@ -29,6 +29,7 @@ function avani_customize_register( $wp_customize ) {
 		'avani_layout', array(
 			'default'           => 'content-sidebar',
 			'sanitize_callback' => 'avani_sanitize_select',
+			'transport'         => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -68,6 +69,7 @@ function avani_customize_register( $wp_customize ) {
 		'avani_theme_color', array(
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -91,6 +93,22 @@ function avani_customize_register( $wp_customize ) {
 			'label'     => __( 'Do not display thumbnails on Single post', 'avani' ),
 			'section'   => 'avani_theme_section',
 			'settings'  => 'avani_no_thumbnail_onpost',
+			'type'      => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'avani_sticky_main_menu', array(
+			'default'           => 1,
+			'sanitize_callback' => 'avani_sanitize_checkbox',
+			'transport'         => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'avani_sticky_main_menu', array(
+			'label'     => __( 'Make navigation menu sticky on scroll', 'avani' ),
+			'section'   => 'avani_theme_section',
+			'settings'  => 'avani_sticky_main_menu',
 			'type'      => 'checkbox',
 		)
 	);

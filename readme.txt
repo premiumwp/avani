@@ -1,11 +1,11 @@
 ===Welcome to Avani ===
 
 Created by: PremiumWP
-Requires at least: WordPress 4.1+ ( Theme Logo available only for WordPress 4.5+ )
+Requires at least: WordPress 4.5+
 PHP required : PHP 5.3+
-IE Browser Support: IE10+
-Tested up to: WordPress 4.7.2
-Version: 1.1.1
+IE Browser Support: IE11+
+Tested up to: WordPress 4.8.1
+Version: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, translation-ready, custom-header,
@@ -93,3 +93,13 @@ Initial Release
 3. Customizer option to display Custom header image only on front page removed.
    Now, header image will be displayed on front page only by default.
 4. Minor typographical improvements.
+
+= 1.1.2 - Aug 16 2017 =
+1. Navigation script optimization and improvements.
+2. Option to make navigation menu sticky/non-sticky on scroll.
+3. Link style improvements.
+4. Backward compatibility added to the theme. Theme will work with WP 4.5 and above only.
+5. HTML5 theme support for search-form has been removed as we use our own search form template.
+6. Live preview added for some customizer options.
+7. Support for IE10 removed. Theme only supports IE11+.
+8. CSS normalization script updated as per normalize.css V7.0.0 and to cater only modern browsers.

@@ -7,6 +7,14 @@
  * @package Avani
  */
 
+/**
+ * Avani only works in WordPress 4.5 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.5', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
+
 if ( ! function_exists( 'avani_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -43,6 +51,9 @@ if ( ! function_exists( 'avani_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 720, 9999 );
 
+		// Set the default content width.
+		$GLOBALS['content_width'] = 720;
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => __( 'Primary', 'avani' ),
@@ -54,7 +65,6 @@ if ( ! function_exists( 'avani_setup' ) ) :
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', array(
-			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
@@ -85,12 +95,15 @@ add_action( 'after_setup_theme', 'avani_setup' );
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
+ * @since 1.0.0
+ *
  * @global int $content_width
  */
 function avani_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'avani_content_width', 720 );
+	$content_width = $GLOBALS['content_width'];
+	$GLOBALS['content_width'] = apply_filters( 'avani_content_width', $content_width );
 }
-add_action( 'after_setup_theme', 'avani_content_width', 0 );
+add_action( 'template_redirect' , 'avani_content_width', 0 );
 
 /**
  * Register widget area.
